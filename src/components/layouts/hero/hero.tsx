@@ -72,9 +72,9 @@ export default function Hero() {
               <i className="fa-solid fa-arrow-right" />
             </Link>
 
-            <Link href="/libraries" className={styles.secondaryButton}>
-              <i className="fa-solid fa-box-open" />
-              Explore Libraries
+            <Link href="/nexment-cli" className={styles.secondaryButton}>
+              <i className="fa-solid fa-terminal" />
+              Nexment CLI
             </Link>
           </div>
         </section>

@@ -1,5 +1,3 @@
-import styles from "./page.module.css";
-
 import Navbar from "@/components/layouts/navbar/navbar";
 import Hero from "@/components/layouts/hero/hero";
 
