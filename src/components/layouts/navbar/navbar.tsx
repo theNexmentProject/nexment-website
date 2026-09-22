@@ -25,12 +25,12 @@ export default function Navbar() {
           <i className="fa-solid fa-folder-open" />
         </Link>
 
-        <Link className={styles.navLink} href="/libraries">
-          Libraries
+        <Link className={styles.navLink} href="/blogs">
+          Blogs
         </Link>
 
-        <Link className={styles.mobileNavLink} href="/libraries">
-          <i className="fa-solid fa-box-open" />
+        <Link className={styles.mobileNavLink} href="/blogs">
+          <i className="fa-solid fa-newspaper"></i>
         </Link>
 
         <Link

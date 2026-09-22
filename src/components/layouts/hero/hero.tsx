@@ -1,23 +1,9 @@
 import Link from "next/link";
 import styles from "./hero.module.css";
 
-const links = [
-  { label: "About", href: "/about", icon: "fa-solid fa-circle-info" },
-  { label: "Support", href: "/support", icon: "fa-solid fa-life-ring" },
-  { label: "Legal", href: "/legal", icon: "fa-solid fa-scale-balanced" },
-  {
-    label: "Changelog",
-    href: "/changelog",
-    icon: "fa-solid fa-clock-rotate-left",
-  },
-  { label: "Contact", href: "/contact", icon: "fa-solid fa-envelope" },
-];
-
 export default function Hero() {
   return (
     <main className={styles.hero}>
-      <div className={styles.backgroundGlow} />
-
       <div className={styles.heroContainer}>
         <section className={styles.terminal}>
           <header className={styles.windowHeader}>
@@ -43,38 +29,17 @@ export default function Hero() {
               <div className={styles.tagline}>
                 Building simple, open-source tools for developers and builders.
               </div>
-
-              <nav className={styles.links} aria-label="Nexment links">
-                {links.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      link.href.startsWith("http") ? "noreferrer" : undefined
-                    }
-                  >
-                    <i className={link.icon} /> {link.label}
-                  </Link>
-                ))}
-              </nav>
-
-              <Link href="/libraries/clivo" className={styles.exploreButton}>
-                Explore Clivo (Current Project)
-              </Link>
             </div>
           </div>
 
           <div className={styles.actions}>
             <Link href="/projects" className={styles.primaryButton}>
-              <i className="fa-solid fa-compass" />
-              Explore Projects
+              <i className="fa-solid fa-compass" /> Explore Projects{" "}
               <i className="fa-solid fa-arrow-right" />
             </Link>
 
-            <Link href="/nexment-cli" className={styles.secondaryButton}>
-              <i className="fa-solid fa-terminal" />
-              Nexment CLI
+            <Link href="/projects/cliva" className={styles.secondaryButton}>
+              Explore Cliva
             </Link>
           </div>
         </section>

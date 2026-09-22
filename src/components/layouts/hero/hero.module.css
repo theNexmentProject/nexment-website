@@ -10,23 +10,6 @@
   background: var(--background);
 }
 
-.backgroundGlow {
-  position: absolute;
-  width: 700px;
-  height: 500px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(198, 173, 183, 0.12) 0%,
-    rgba(145, 166, 127, 0.05) 35%,
-    transparent 72%
-  );
-  filter: blur(70px);
-  pointer-events: none;
-}
-
 .heroContainer {
   width: min(850px, 100%);
   position: relative;
@@ -111,8 +94,6 @@
   height: auto;
   display: block;
   aspect-ratio: 3 / 1;
-  border: 1px solid var(--primary);
-  border-radius: var(--br-md);
   object-fit: contain;
 }
 
@@ -121,7 +102,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .projectContent h1 {
@@ -138,74 +119,8 @@
   font-weight: 700;
 }
 
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin-top: 24px;
-}
-
-.links a {
-  display: inline-flex;
-  align-items: center;
-  color: var(--text);
-  font-family: var(--font-code);
-  font-size: var(--text-sm);
-  text-decoration: none;
-  opacity: 0.55;
-  transition:
-    color var(--transition-fast),
-    opacity var(--transition-fast);
-}
-
-.links a i {
-  margin-right: 6px;
-}
-
-.links a:hover {
-  color: var(--primary);
-  opacity: 1;
-}
-
-.exploreButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 28px;
-  padding: 10px 17px;
-  border: 1px solid var(--border);
-  border-radius: var(--br-md);
-  color: var(--primary);
-  background: rgba(198, 173, 183, 0.04);
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    color var(--transition-normal),
-    border-color var(--transition-normal),
-    background var(--transition-normal),
-    transform var(--transition-normal);
-}
-
-.exploreButton i,
-.primaryButton i:last-child,
-.secondaryButton i:last-child {
+.primaryButton i:last-child {
   transition: transform var(--transition-normal);
-}
-
-.exploreButton:hover {
-  color: var(--text);
-  border-color: var(--border-primary);
-  background: rgba(198, 173, 183, 0.08);
-  transform: translateY(-1px);
-}
-
-.exploreButton:hover i {
-  transform: translateX(3px);
 }
 
 .actions {
@@ -336,20 +251,6 @@
 
   .description {
     font-size: var(--text-sm);
-  }
-
-  .links {
-    gap: 8px 14px;
-    margin-top: 20px;
-  }
-
-  .links a {
-    font-size: var(--text-xs);
-  }
-
-  .exploreButton {
-    width: 100%;
-    margin-top: 24px;
   }
 
   .actions {

@@ -1,0 +1,375 @@
+.main {
+  min-height: 100dvh;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.label,
+.smallLabel {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+.label {
+  font-size: 0.72rem;
+  margin-bottom: 28px;
+}
+
+.smallLabel {
+  font-size: 0.65rem;
+}
+
+.left {
+  width: 32%;
+  min-height: 90dvh;
+  box-sizing: border-box;
+  padding: 60px 45px;
+  background: var(--secondary);
+  color: var(--secondary-accent);
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left h1 {
+  max-width: 400px;
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.intro {
+  max-width: 430px;
+  margin-top: 35px;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.idea {
+  margin-top: 55px;
+  padding-top: 25px;
+  border-top: 1px solid var(--text-secondary);
+}
+
+.ideaNumber,
+.crateIndex {
+  font-size: 0.7rem;
+  opacity: 0.55;
+}
+
+.idea h2 {
+  margin: 12px 0;
+  font-size: 2rem;
+}
+
+.idea p {
+  line-height: 1.65;
+  opacity: 0.85;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 7px 12px;
+  border: 1px solid var(--text-secondary);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.suggestion {
+  margin-top: auto;
+  padding-top: 30px;
+  border-top: 1px solid var(--text-secondary);
+}
+
+.suggestion strong {
+  font-size: 0.95rem;
+}
+
+.suggestion p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.suggestion a,
+.mobileFuture a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.right {
+  width: 62%;
+  min-height: 90dvh;
+  box-sizing: border-box;
+  margin-right: 50px;
+  padding: 75px;
+  background: var(--primary);
+  color: var(--text-primary);
+  border-radius: 50px 150px;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.projectHeader h1 {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.9;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin-top: 30px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.status {
+  flex-shrink: 0;
+  padding: 8px 13px;
+  border: 1px solid var(--text-primary);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.description {
+  max-width: 850px;
+  margin-top: 45px;
+  line-height: 1.75;
+  opacity: 0.7;
+}
+
+.crates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.crate {
+  padding: 25px;
+  border: 1px solid var(--text-primary);
+  border-radius: 20px;
+}
+
+.crate h2 {
+  margin: 15px 0 10px;
+  font-size: 1.5rem;
+}
+
+.crate p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  opacity: 0.65;
+}
+
+.crate code {
+  display: inline-block;
+  margin-top: 20px;
+  color: #9c3e10;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-family: var(--font-code);
+  font-weight: 700;
+}
+
+.design {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--text-primary);
+}
+
+.design h2 {
+  margin-top: 12px;
+  font-size: 1.5rem;
+}
+
+.design p {
+  margin: 0;
+  line-height: 1.7;
+  opacity: 0.65;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.features span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--text-primary);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top: 1px solid var(--text-primary);
+}
+
+.footer p {
+  max-width: 500px;
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.5;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: var(--secondary);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.mobileCards {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .right {
+    margin-right: 20px;
+    padding: 50px;
+  }
+
+  .projectHeader {
+    display: block;
+  }
+
+  .status {
+    display: inline-block;
+    margin-top: 25px;
+  }
+
+  .design {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    min-height: auto;
+    margin-top: 30px;
+    padding: 30px;
+    display: block;
+  }
+
+  .left,
+  .right {
+    display: none;
+  }
+
+  .mobileCards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .mobileCurrent,
+  .mobileFuture {
+    box-sizing: border-box;
+    padding: 35px 28px;
+  }
+
+  .mobileCurrent {
+    background: var(--secondary);
+    color: var(--text-secondary);
+    border-radius: 30px 70px;
+  }
+
+  .mobileFuture {
+    background: var(--accent);
+    color: var(--text-accent);
+    border-radius: 25px 55px;
+  }
+
+  .mobileCurrent h1 {
+    margin-bottom: 10px;
+    font-size: 3.5rem;
+  }
+
+  .mobileCurrent p,
+  .mobileFuture p {
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
+  .mobileCrates {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 25px;
+  }
+
+  .mobileCrates span {
+    padding: 12px 14px;
+    border-left: 1px solid var(--text-accent);
+    border-radius: 10px;
+    font-size: 0.8rem;
+  }
+
+  .mobileCurrent .button {
+    margin-top: 25px;
+  }
+
+  .mobileFuture h2 {
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+  }
+
+  .mobileFuture a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 450px) {
+  .mobileCurrent,
+  .mobileFuture {
+    padding: 30px 24px;
+  }
+}

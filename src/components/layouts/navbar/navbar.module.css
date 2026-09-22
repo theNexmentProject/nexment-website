@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 18px;
   padding: 8px 15px;
   border: 1px solid var(--primary);
   border-radius: var(--br-lg);
@@ -34,14 +34,14 @@
   height: auto;
   aspect-ratio: 3 / 1;
   display: block;
+  margin-right: 30px;
 }
 
 .navLink {
-  padding: 5px 15px;
+  padding: 2px 15px;
   color: var(--text);
   font-size: var(--text-xl);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
   transition:
     color var(--transition-fast),
     border-color var(--transition-fast);
@@ -49,7 +49,6 @@
 
 .navLink:hover {
   color: var(--primary);
-  border-bottom-color: var(--primary);
 }
 
 .iconButton,
@@ -79,7 +78,7 @@
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .navbar {
     gap: 10px;
     padding: 7px 10px;
