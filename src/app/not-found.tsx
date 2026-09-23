@@ -1,16 +1,20 @@
-import styles from "./page.module.css";
 import Link from "next/link";
+import styles from "./page.module.css";
 
 export default function NotFound() {
   return (
-    <div className={styles.loaderMain}>
-      <div className={styles.loaderContainer}>
-        <h1>404</h1>
-        <h3>Page Not Found</h3>
-        <Link href="/">
-          Go Home <i className="fa-solid fa-home"></i>
+    <main className={styles.page}>
+      <div className={styles.content}>
+        <p className={styles.code}>404</p>
+        <h1>Page not found</h1>
+        <p className={styles.description}>
+          The page you are looking for doesn’t exist or has been moved.
+        </p>
+
+        <Link href="/" className={styles.link}>
+          Go back home
         </Link>
       </div>
-    </div>
+    </main>
   );
 }

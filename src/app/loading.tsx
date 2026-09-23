@@ -1,11 +1,9 @@
 import styles from "./page.module.css";
 
-export default function NotFound() {
+export default function Loading() {
   return (
-    <div className={styles.loaderMain}>
-      <div className={styles.loaderContainer}>
-        <h1>Loading...</h1>
-      </div>
-    </div>
+    <main className={styles.page}>
+      <div className={styles.loader} aria-label="Loading" />
+    </main>
   );
 }

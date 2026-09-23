@@ -1,0 +1,133 @@
+.article {
+  width: min(100%, 860px);
+  margin: 60px auto;
+  padding: 120px 24px 100px;
+}
+
+.hero {
+  padding-bottom: 70px;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.eyebrow i {
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  max-width: 760px;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  max-width: 700px;
+  margin-top: 24px;
+  color: var(--primary);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  margin-top: 28px;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta i {
+  color: var(--accent);
+}
+
+.content {
+  padding-top: 65px;
+}
+
+.content section {
+  margin-bottom: 64px;
+}
+
+.content h2 {
+  margin-bottom: 18px;
+  font-size: var(--text-2xl);
+}
+
+.content p {
+  max-width: 720px;
+  margin-bottom: 18px;
+  color: var(--text);
+  line-height: var(--leading-relaxed);
+}
+
+.content ul {
+  max-width: 720px;
+  margin: 24px 0 0;
+  padding-left: 22px;
+  color: var(--primary);
+}
+
+.content li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+  line-height: var(--leading-relaxed);
+}
+
+.content strong {
+  color: var(--text);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  color: var(--primary);
+  font-size: var(--text-sm);
+}
+
+.footer i {
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .article {
+    padding: 90px 20px 70px;
+  }
+
+  .hero {
+    padding-bottom: 50px;
+  }
+
+  .content {
+    padding-top: 50px;
+  }
+
+  .content section {
+    margin-bottom: 50px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .intro {
+    font-size: var(--text-md);
+  }
+}

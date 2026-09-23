@@ -1,0 +1,202 @@
+.footer {
+  width: 100%;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  margin-top: 90px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 7rem 2rem 3rem;
+}
+
+/* ---------- Main ---------- */
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+}
+
+.brand {
+  max-width: 360px;
+}
+
+.logoLink {
+  display: inline-block;
+}
+
+.logo {
+  display: block;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand p {
+  max-width: 330px;
+  margin-top: 1.5rem;
+
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+}
+
+.projectName {
+  margin-top: 1.5rem;
+
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+}
+
+/* ---------- Link sections ---------- */
+
+.linkSections {
+  display: flex;
+  gap: 6rem;
+}
+
+.linkSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  min-width: 110px;
+}
+
+.linkSection h3 {
+  margin-bottom: 0.45rem;
+
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.linkSection a {
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+
+  transition: color var(--transition-normal);
+}
+
+.linkSection a:hover {
+  color: var(--primary);
+}
+
+/* ---------- Go to top ---------- */
+
+.topRow {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 5rem;
+}
+
+.topButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem 0.75rem;
+
+  border: 1px solid var(--border);
+  border-radius: var(--br-md);
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+
+  transition:
+    color var(--transition-normal),
+    border-color var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.topButton:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+  background: var(--surface);
+}
+
+.topButton i {
+  font-size: 0.7rem;
+}
+
+/* ---------- Footer bottom ---------- */
+
+.footerBottom {
+  width: 100%;
+  border-top: 1px solid var(--border);
+}
+
+.bottomContainer {
+  width: 100%;
+  padding: 1.25rem 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .container {
+    padding: 5rem 1.5rem 2.5rem;
+  }
+
+  .main {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .linkSections {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .linkSections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+
+  .linkSection:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .topRow {
+    margin-top: 4rem;
+  }
+
+  .bottomContainer {
+    padding: 1.1rem 1.25rem;
+
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

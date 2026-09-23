@@ -135,8 +135,8 @@ export default function Featured() {
             </p>
           </div>
 
-          <a className={styles.button} href="/libraries/cliva">
-            Explore Cliva →
+          <a className={styles.button} href="/projects/cliva">
+            Explore Cliva
           </a>
         </div>
       </section>
@@ -157,7 +157,7 @@ export default function Featured() {
             <span>cliva-io — Terminal I/O</span>
           </div>
 
-          <a className={styles.button} href="/libraries/cliva">
+          <a className={styles.button} href="/projects/cliva">
             Explore Cliva →
           </a>
         </section>

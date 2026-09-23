@@ -1,0 +1,169 @@
+.page {
+  min-height: 100dvh;
+  background: var(--background);
+  color: var(--text);
+}
+
+.container {
+  width: min(100% - 2rem, 850px);
+  margin: 0 auto;
+  padding: 2rem 0 6rem;
+}
+
+.homeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.7rem 1rem;
+
+  border: 1px solid var(--surface-border);
+  border-radius: 0.5rem;
+
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.homeButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+.header {
+  max-width: 700px;
+  margin-top: 8rem;
+}
+
+.eyebrow,
+.sectionNumber {
+  margin: 0 0 0.75rem;
+
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.intro {
+  max-width: 650px;
+  margin-top: 1.5rem;
+
+  color: var(--primary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.content {
+  margin-top: 7rem;
+}
+
+.section {
+  max-width: 700px;
+  padding: 4rem 0;
+
+  border-top: 1px solid var(--surface-border);
+}
+
+.section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.section h2 {
+  margin: 0 0 2rem;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.section h3 {
+  margin: 2.5rem 0 0.75rem;
+
+  font-size: 1.15rem;
+}
+
+.section p:not(.sectionNumber) {
+  margin: 0 0 1.25rem;
+
+  color: var(--primary);
+  line-height: 1.8;
+}
+
+.footer {
+  max-width: 700px;
+  margin-top: 3rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--surface-border);
+}
+
+.footer p {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+}
+
+.footer a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+.topButton {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--surface-border);
+  border-radius: 50%;
+
+  background: var(--surface);
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.topButton:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .header {
+    margin-top: 6rem;
+  }
+
+  .content {
+    margin-top: 5rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
