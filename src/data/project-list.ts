@@ -46,7 +46,7 @@ const projects: Project[] = [
     links: {
       github: "https://github.com/theNexmentProject/cliva",
       docs: "https://docs.rs/cliva-io",
-      youtube: "https://youtube.com/@NexmentProject",
+      /* youtube: "https://youtube.com/@NexmentProject", */
     },
   },
 ];
