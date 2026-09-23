@@ -54,11 +54,12 @@ export default function Newsletter() {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Subscription failed");
+        throw new Error(data?.error || "Subscription failed");
       }
 
-      // UX state only.
       localStorage.setItem(STORAGE_KEY, "true");
 
       setEmail("");
