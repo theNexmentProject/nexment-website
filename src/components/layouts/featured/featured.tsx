@@ -1,8 +1,120 @@
 import styles from "./featured.module.css";
 
+type ProjectItem = {
+  number: string;
+  title: string;
+  description: string;
+  code?: string;
+};
+
+type ProjectData = {
+  label: string;
+  name: string;
+  status: string;
+  subtitle: string;
+  description: string;
+
+  items: ProjectItem[];
+
+  design: {
+    label: string;
+    title: string;
+    description: string;
+  };
+
+  features: string[];
+
+  footer: {
+    label: string;
+    description: string;
+  };
+
+  button: {
+    label: string;
+    href: string;
+  };
+};
+
+type FutureProjectData = {
+  number: string;
+  name: string;
+  description: string;
+  tag: string;
+};
+
+const futureProject: FutureProjectData = {
+  number: "01",
+  name: "Devsh",
+  description:
+    "Devsh is a developer-focused shell language built for modern workflows, combining powerful scripting, built-in developer tools, modularity, and isolated project environments into one fast, consistent terminal experience.",
+
+  tag: "Future Project",
+};
+
+const currentProject: ProjectData = {
+  label: "CURRENT PROJECT",
+
+  name: "Cliva",
+
+  status: "Under active development",
+
+  subtitle:
+    "A Rust toolkit for building reliable, polished, and developer-friendly command-line applications.",
+
+  description:
+    "Cliva is a collection of focused Rust libraries designed to make CLI development faster, cleaner, and less repetitive. Instead of forcing everything into one large library, Cliva is organized as a Cargo workspace containing independently usable crates.",
+
+  items: [
+    {
+      number: "01",
+      title: "cliva",
+      description:
+        "The core CLI development library. It provides the building blocks required to create command-line applications, including commands, arguments, options, flags, subcommands, parsing, and related CLI functionality.",
+      code: 'cliva = "0.1"',
+    },
+
+    {
+      number: "02",
+      title: "cliva-io",
+      description:
+        "A standalone terminal input and output toolkit for Rust CLI applications. It focuses on consistent terminal interaction, including formatted output, user input, prompts, status messages, tables, and other terminal UI functionality.",
+      code: 'cliva-io = "0.1"',
+    },
+  ],
+
+  design: {
+    label: "DESIGN",
+    title: "Focused by design.",
+    description:
+      "The crates are intentionally independent. You can use cliva for CLI development without using cliva-io, or use cliva-io on its own when you only need terminal interaction.",
+  },
+
+  features: [
+    "Less boilerplate",
+    "Clear APIs",
+    "Independent components",
+    "Reliable CLI behavior",
+    "Consistent terminal interaction",
+    "Minimal dependencies",
+  ],
+
+  footer: {
+    label: "RUST · CARGO WORKSPACE",
+    description:
+      "APIs are currently evolving and may change before the first stable release.",
+  },
+
+  button: {
+    label: "Explore Cliva",
+    href: "/projects/cliva",
+  },
+};
+
 export default function Featured() {
   return (
     <main className={styles.main}>
+      {/* FUTURE PROJECT */}
+
       <section className={styles.left}>
         <span className={styles.label}>NEXT BUILD</span>
 
@@ -15,23 +127,13 @@ export default function Featured() {
         </p>
 
         <div className={styles.idea}>
-          <span className={styles.ideaNumber}>01</span>
+          <span className={styles.ideaNumber}>{futureProject.number}</span>
 
-          <h2>Docsly</h2>
+          <h2>{futureProject.name}</h2>
 
-          <p>
-            Docsly is a small documentation tool designed to turn simple
-            Markdown-based documents into fully functional documentation
-            websites.
-          </p>
+          <p>{futureProject.description}</p>
 
-          <p>
-            A Docsly document is essentially Markdown with additional Docsly
-            blocks that can introduce interactive and richer documentation
-            components that ordinary Markdown cannot provide on its own.
-          </p>
-
-          <span className={styles.tag}>Future Project</span>
+          <span className={styles.tag}>{futureProject.tag}</span>
         </div>
 
         <div className={styles.suggestion}>
@@ -46,131 +148,111 @@ export default function Featured() {
         </div>
       </section>
 
+      {/* CURRENT PROJECT */}
+
       <section className={styles.right}>
-        <span className={styles.label}>CURRENT PROJECT</span>
+        <span className={styles.label}>{currentProject.label}</span>
 
         <div className={styles.projectHeader}>
           <div>
-            <h1>Cliva</h1>
+            <h1>{currentProject.name}</h1>
 
-            <p className={styles.subtitle}>
-              A Rust toolkit for building reliable, polished, and
-              developer-friendly command-line applications.
-            </p>
+            <p className={styles.subtitle}>{currentProject.subtitle}</p>
           </div>
 
-          <span className={styles.status}>Under active development</span>
+          <span className={styles.status}>{currentProject.status}</span>
         </div>
 
-        <p className={styles.description}>
-          Cliva is a collection of focused Rust libraries designed to make CLI
-          development faster, cleaner, and less repetitive. Instead of forcing
-          everything into one large library, Cliva is organized as a Cargo
-          workspace containing independently usable crates.
-        </p>
+        <p className={styles.description}>{currentProject.description}</p>
+
+        {/* GENERIC PROJECT ITEMS */}
 
         <div className={styles.crates}>
-          <article className={styles.crate}>
-            <span className={styles.crateIndex}>01</span>
+          {currentProject.items.map((item) => (
+            <article
+              className={styles.crate}
+              key={`${item.number}-${item.title}`}
+            >
+              <span className={styles.crateIndex}>{item.number}</span>
 
-            <h2>cliva</h2>
+              <h2>{item.title}</h2>
 
-            <p>
-              The core CLI development library. It provides the building blocks
-              required to create command-line applications, including commands,
-              arguments, options, flags, subcommands, parsing, and related CLI
-              functionality.
-            </p>
+              <p>{item.description}</p>
 
-            <code>cliva = &quot;0.1&quot;</code>
-          </article>
-
-          <article className={styles.crate}>
-            <span className={styles.crateIndex}>02</span>
-
-            <h2>cliva-io</h2>
-
-            <p>
-              A standalone terminal input and output toolkit for Rust CLI
-              applications. It focuses on consistent terminal interaction,
-              including formatted output, user input, prompts, status messages,
-              tables, and other terminal UI functionality.
-            </p>
-
-            <code>cliva-io = &quot;0.1&quot;</code>
-          </article>
+              {item.code && <code>{item.code}</code>}
+            </article>
+          ))}
         </div>
+
+        {/* DESIGN */}
 
         <div className={styles.design}>
           <div>
-            <span className={styles.smallLabel}>DESIGN</span>
-            <h2>Focused by design.</h2>
+            <span className={styles.smallLabel}>
+              {currentProject.design.label}
+            </span>
+
+            <h2>{currentProject.design.title}</h2>
           </div>
 
-          <p>
-            The crates are intentionally independent. You can use
-            <strong> cliva </strong>
-            for CLI development without using
-            <strong> cliva-io</strong>, or use
-            <strong> cliva-io </strong>
-            on its own when you only need terminal interaction.
-          </p>
+          <p>{currentProject.design.description}</p>
         </div>
 
+        {/* FEATURES */}
+
         <div className={styles.features}>
-          <span>Less boilerplate</span>
-          <span>Clear APIs</span>
-          <span>Independent components</span>
-          <span>Reliable CLI behavior</span>
-          <span>Consistent terminal interaction</span>
-          <span>Minimal dependencies</span>
+          {currentProject.features.map((feature) => (
+            <span key={feature}>{feature}</span>
+          ))}
         </div>
+
+        {/* FOOTER */}
 
         <div className={styles.footer}>
           <div>
-            <span className={styles.smallLabel}>RUST · CARGO WORKSPACE</span>
-            <p>
-              APIs are currently evolving and may change before the first stable
-              release.
-            </p>
+            <span className={styles.smallLabel}>
+              {currentProject.footer.label}
+            </span>
+
+            <p>{currentProject.footer.description}</p>
           </div>
 
-          <a className={styles.button} href="/projects/cliva">
-            Explore Cliva
+          <a className={styles.button} href={currentProject.button.href}>
+            {currentProject.button.label}
           </a>
         </div>
       </section>
 
+      {/* MOBILE */}
+
       <div className={styles.mobileCards}>
         <section className={styles.mobileCurrent}>
-          <span className={styles.label}>CURRENT PROJECT</span>
+          <span className={styles.label}>{currentProject.label}</span>
 
-          <h1>Cliva</h1>
+          <h1>{currentProject.name}</h1>
 
-          <p>
-            A Rust toolkit for building reliable and developer-friendly
-            command-line applications.
-          </p>
+          <p>{currentProject.subtitle}</p>
 
           <div className={styles.mobileCrates}>
-            <span>cliva — CLI development</span>
-            <span>cliva-io — Terminal I/O</span>
+            {currentProject.items.map((item) => (
+              <span key={`${item.number}-${item.title}`}>
+                {item.title}
+                {item.code ? ` — ${item.code}` : ""}
+              </span>
+            ))}
           </div>
 
-          <a className={styles.button} href="/projects/cliva">
-            Explore Cliva →
+          <a className={styles.button} href={currentProject.button.href}>
+            {currentProject.button.label} →
           </a>
         </section>
 
         <section className={styles.mobileFuture}>
           <span className={styles.label}>NEXT BUILD</span>
 
-          <h2>Docsly</h2>
+          <h2>{futureProject.name}</h2>
 
-          <p>
-            Markdown-based documentation with additional blocks for creating
-            richer and more interactive documentation websites.
-          </p>
+          <p>{futureProject.description}</p>
 
           <a href="mailto:labs@nexment.in">Suggest an idea</a>
         </section>

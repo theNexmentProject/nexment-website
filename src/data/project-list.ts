@@ -28,8 +28,7 @@ const projects: Project[] = [
     tags: ["Rust", "CLI", "Toolkit", "Library"],
     links: {
       github: "https://github.com/theNexmentProject/cliva",
-      docs: "https://docs.rs/cliva",
-      youtube: "https://youtube.com/@NexmentProject",
+      docs: "https://docs.nexment.in/cliva",
     },
   },
 
@@ -45,8 +44,7 @@ const projects: Project[] = [
     tags: ["Rust", "Terminal", "I/O", "CLI", "Library"],
     links: {
       github: "https://github.com/theNexmentProject/cliva",
-      docs: "https://docs.rs/cliva-io",
-      /* youtube: "https://youtube.com/@NexmentProject", */
+      docs: "https://docs.nexment.in/cliva-io",
     },
   },
 ];

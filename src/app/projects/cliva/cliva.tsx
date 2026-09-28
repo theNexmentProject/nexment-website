@@ -1,10 +1,151 @@
-import styles from "./cliva.module.css";
+import styles from "@/components/styles/project.module.css";
 import Navbar from "@/components/layouts/navbar/navbar";
+
+const clivaData = {
+  name: "Cliva",
+
+  hero: {
+    eyebrow: "Rust CLI Toolkit",
+
+    description:
+      "A Rust toolkit for building reliable, polished, and developer-friendly command-line applications.",
+
+    github: "https://github.com/theNexmentProject/cliva",
+
+    meta: [
+      {
+        label: "Rust",
+        icon: "fa-solid fa-cube",
+      },
+      {
+        label: "Cargo Workspace",
+        icon: "fa-solid fa-code-branch",
+      },
+      {
+        label: "Open Source",
+        icon: "fa-solid fa-code",
+      },
+    ],
+  },
+
+  overview: {
+    label: "Overview",
+
+    title: (
+      <>
+        CLI development
+        <br />
+        without the repetition.
+      </>
+    ),
+
+    paragraphs: [
+      "Cliva is a collection of focused Rust libraries designed to make CLI development faster, cleaner, and less repetitive.",
+      "Rather than putting everything into one large library, Cliva is organized as a Cargo workspace containing independently usable crates.",
+    ],
+
+    highlight: "Use only what your application needs. Nothing more.",
+  },
+
+  components: {
+    label: "Components",
+
+    title: "Focused libraries. One workspace.",
+
+    description:
+      "Each component solves a specific part of CLI development and can be used independently.",
+
+    items: [
+      {
+        number: "01",
+        type: "Core library",
+        name: "cliva",
+        icon: "fa-solid fa-terminal",
+
+        description:
+          "The core CLI development library for commands, arguments, options, flags, subcommands, parsing, and related CLI functionality.",
+
+        package: 'cliva = "0.1"',
+        docs: "https://docs.nexment.in/cliva",
+      },
+
+      {
+        number: "02",
+        type: "Terminal toolkit",
+        name: "cliva-io",
+        icon: "fa-solid fa-display",
+
+        description:
+          "A standalone terminal input and output toolkit providing formatted output, user input, prompts, status messages, tables, and terminal UI utilities.",
+
+        package: 'cliva-io = "0.1"',
+        docs: "https://docs.nexment.in/cliva-io",
+      },
+    ],
+  },
+
+  architecture: {
+    label: "Architecture",
+
+    title: "Independent pieces. One ecosystem.",
+
+    description:
+      "Cliva keeps CLI development and terminal interaction separate, so each part can be used independently or together.",
+
+    items: [
+      {
+        name: "cliva",
+        type: "CLI Development",
+        icon: "fa-solid fa-terminal",
+
+        features: [
+          "Commands",
+          "Arguments",
+          "Options",
+          "Flags",
+          "Parsing",
+          "Routing",
+        ],
+      },
+
+      {
+        name: "cliva-io",
+        type: "Terminal I/O",
+        icon: "fa-solid fa-desktop",
+
+        features: [
+          "Input",
+          "Output",
+          "Prompts",
+          "Formatting",
+          "Status",
+          "Tables",
+        ],
+      },
+    ],
+  },
+
+  getStarted: {
+    label: "Get started",
+
+    title: "Explore Cliva.",
+
+    description:
+      "Explore the source, read the documentation, or start experimenting with the components.",
+
+    github: "https://github.com/theNexmentProject/cliva",
+
+    docs: "https://docs.nexment.in/cliva",
+
+    license: "Apache License 2.0",
+  },
+};
 
 export default function ClivaPage() {
   return (
     <>
       <Navbar />
+
       <main className={styles.page}>
         {/* Hero */}
         <section className={styles.hero}>
@@ -12,19 +153,18 @@ export default function ClivaPage() {
             <div className={styles.heroContent}>
               <span className={styles.eyebrow}>
                 <i className="fa-solid fa-terminal" />
-                Rust CLI Toolkit
+                {clivaData.hero.eyebrow}
               </span>
 
-              <h1>Cliva</h1>
+              <h1>{clivaData.name}</h1>
 
               <p className={styles.heroDescription}>
-                A Rust toolkit for building reliable, polished, and
-                developer-friendly command-line applications.
+                {clivaData.hero.description}
               </p>
 
               <div className={styles.actions}>
                 <a
-                  href="https://github.com/theNexmentProject/cliva"
+                  href={clivaData.hero.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${styles.button} ${styles.buttonPrimary}`}
@@ -35,29 +175,21 @@ export default function ClivaPage() {
                 </a>
 
                 <a
-                  href="#crates"
+                  href="#components"
                   className={`${styles.button} ${styles.buttonSecondary}`}
                 >
-                  Explore crates
+                  Explore components
                   <i className="fa-solid fa-arrow-down" />
                 </a>
               </div>
 
               <div className={styles.meta}>
-                <span>
-                  <i className="fa-solid fa-cube" />
-                  Rust
-                </span>
-
-                <span>
-                  <i className="fa-solid fa-code-branch" />
-                  Cargo Workspace
-                </span>
-
-                <span>
-                  <i className="fa-solid fa-code" />
-                  Open Source
-                </span>
+                {clivaData.hero.meta.map((item) => (
+                  <span key={item.label}>
+                    <i className={item.icon} />
+                    {item.label}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -67,127 +199,75 @@ export default function ClivaPage() {
         <section className={styles.section}>
           <div className={`${styles.container} ${styles.intro}`}>
             <div className={styles.sectionTitle}>
-              <span className={styles.label}>01 — Overview</span>
+              <span className={styles.label}>{clivaData.overview.label}</span>
 
-              <h2>
-                CLI development
-                <br />
-                without the repetition.
-              </h2>
+              <h2>{clivaData.overview.title}</h2>
             </div>
 
             <div className={styles.text}>
-              <p>
-                Cliva is a collection of focused Rust libraries designed to make
-                CLI development faster, cleaner, and less repetitive.
-              </p>
+              {clivaData.overview.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
 
-              <p>
-                Rather than putting everything into one large library, Cliva is
-                organized as a Cargo workspace containing independently usable
-                crates.
-              </p>
-
-              <p className={styles.highlight}>
-                Use only what your application needs. Nothing more.
-              </p>
+              <p className={styles.highlight}>{clivaData.overview.highlight}</p>
             </div>
           </div>
         </section>
 
-        {/* Crates */}
+        {/* Components */}
         <section
-          id="crates"
-          className={`${styles.section} ${styles.cratesSection}`}
+          id="components"
+          className={`${styles.section} ${styles.componentsSection}`}
         >
           <div className={styles.container}>
             <div className={styles.sectionHeading}>
-              <span className={styles.label}>02 — Crates</span>
+              <span className={styles.label}>{clivaData.components.label}</span>
 
-              <h2>Focused libraries. One workspace.</h2>
+              <h2>{clivaData.components.title}</h2>
 
-              <p>
-                Each crate solves a specific part of CLI development and can be
-                used independently.
-              </p>
+              <p>{clivaData.components.description}</p>
             </div>
 
-            <div className={styles.crateGrid}>
-              {/* Cliva */}
-              <article className={styles.card}>
-                <div className={styles.cardTop}>
-                  <div className={styles.cardIcon}>
-                    <i className="fa-solid fa-terminal" />
+            <div className={styles.componentGrid}>
+              {clivaData.components.items.map((component) => (
+                <article key={component.name} className={styles.componentCard}>
+                  <div className={styles.componentTop}>
+                    <div className={styles.componentIcon}>
+                      <i className={component.icon} />
+                    </div>
+
+                    <span className={styles.componentNumber}>
+                      {component.number}
+                    </span>
                   </div>
 
-                  <span className={styles.cardNumber}>01</span>
-                </div>
+                  <div className={styles.componentContent}>
+                    <span className={styles.componentType}>
+                      {component.type}
+                    </span>
 
-                <div className={styles.cardContent}>
-                  <span className={styles.cardType}>Core library</span>
+                    <h3>{component.name}</h3>
 
-                  <h3>cliva</h3>
+                    <p>{component.description}</p>
 
-                  <p>
-                    The core CLI development library for commands, arguments,
-                    options, flags, subcommands, parsing, and related CLI
-                    functionality.
-                  </p>
+                    <div className={styles.package}>
+                      <span>Package</span>
 
-                  <div className={styles.dependency}>
-                    <span>Dependency</span>
-                    <code>cliva = "0.1"</code>
+                      <code>{component.package}</code>
+                    </div>
+
+                    <a
+                      href={component.docs}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.textLink}
+                    >
+                      View documentation
+                      <i className="fa-solid fa-arrow-up-right-from-square" />
+                    </a>
                   </div>
-
-                  <a
-                    href="https://docs.rs/cliva"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.textLink}
-                  >
-                    View documentation
-                    <i className="fa-solid fa-arrow-up-right-from-square" />
-                  </a>
-                </div>
-              </article>
-
-              {/* Cliva IO */}
-              <article className={styles.card}>
-                <div className={styles.cardTop}>
-                  <div className={styles.cardIcon}>
-                    <i className="fa-solid fa-display" />
-                  </div>
-
-                  <span className={styles.cardNumber}>02</span>
-                </div>
-
-                <div className={styles.cardContent}>
-                  <span className={styles.cardType}>Terminal toolkit</span>
-
-                  <h3>cliva-io</h3>
-
-                  <p>
-                    A standalone terminal input and output toolkit providing
-                    formatted output, user input, prompts, status messages,
-                    tables, and terminal UI utilities.
-                  </p>
-
-                  <div className={styles.dependency}>
-                    <span>Dependency</span>
-                    <code>cliva-io = "0.1"</code>
-                  </div>
-
-                  <a
-                    href="https://docs.rs/cliva-io"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.textLink}
-                  >
-                    View documentation
-                    <i className="fa-solid fa-arrow-up-right-from-square" />
-                  </a>
-                </div>
-              </article>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -196,192 +276,36 @@ export default function ClivaPage() {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHeading}>
-              <span className={styles.label}>03 — Architecture</span>
+              <span className={styles.label}>
+                {clivaData.architecture.label}
+              </span>
 
-              <h2>Built as independent pieces.</h2>
+              <h2>{clivaData.architecture.title}</h2>
 
-              <p>
-                CLI development and terminal interaction stay separate while
-                remaining easy to combine when needed.
-              </p>
+              <p>{clivaData.architecture.description}</p>
             </div>
 
-            <div className={styles.workspace}>
-              <div className={styles.workspaceHeader}>
-                <div className={styles.workspaceIcon}>
-                  <i className="fa-solid fa-cubes" />
-                </div>
+            <div className={styles.architecture}>
+              <div className={styles.architectureGrid}>
+                {clivaData.architecture.items.map((item) => (
+                  <div key={item.name} className={styles.architectureCard}>
+                    <div className={styles.architectureIcon}>
+                      <i className={item.icon} />
+                    </div>
 
-                <div>
-                  <strong>Cliva Workspace</strong>
-                  <span>Independent crates, shared ecosystem.</span>
-                </div>
-              </div>
+                    <div>
+                      <h3>{item.name}</h3>
 
-              <div className={styles.workspaceGrid}>
-                <div className={styles.workspaceCard}>
-                  <div className={styles.workspaceCardIcon}>
-                    <i className="fa-solid fa-terminal" />
+                      <span>{item.type}</span>
+                    </div>
+
+                    <ul>
+                      {item.features.map((feature) => (
+                        <li key={feature}>{feature}</li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <div>
-                    <h3>cliva</h3>
-                    <span>CLI Development</span>
-                  </div>
-
-                  <ul>
-                    <li>Commands</li>
-                    <li>Arguments</li>
-                    <li>Options</li>
-                    <li>Flags</li>
-                    <li>Parsing</li>
-                    <li>Routing</li>
-                  </ul>
-                </div>
-
-                <div className={styles.workspaceCard}>
-                  <div className={styles.workspaceCardIcon}>
-                    <i className="fa-solid fa-desktop" />
-                  </div>
-
-                  <div>
-                    <h3>cliva-io</h3>
-                    <span>Terminal I/O</span>
-                  </div>
-
-                  <ul>
-                    <li>Input</li>
-                    <li>Output</li>
-                    <li>Prompts</li>
-                    <li>Formatting</li>
-                    <li>Status</li>
-                    <li>Tables</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Philosophy */}
-        <section className={`${styles.section} ${styles.philosophy}`}>
-          <div className={styles.container}>
-            <div className={styles.sectionHeading}>
-              <span className={styles.label}>04 — Philosophy</span>
-
-              <h2>Why Cliva?</h2>
-
-              <p>
-                Cliva focuses on the repetitive parts of CLI development without
-                hiding the fundamentals from developers.
-              </p>
-            </div>
-
-            <div className={styles.featureGrid}>
-              <article className={styles.feature}>
-                <i className="fa-solid fa-layer-group" />
-                <h3>Less boilerplate</h3>
-                <p>Avoid repeatedly solving the same common CLI problems.</p>
-              </article>
-
-              <article className={styles.feature}>
-                <i className="fa-solid fa-code" />
-                <h3>Clear APIs</h3>
-                <p>
-                  Simple and expressive primitives designed to stay predictable.
-                </p>
-              </article>
-
-              <article className={styles.feature}>
-                <i className="fa-solid fa-puzzle-piece" />
-                <h3>Independent components</h3>
-                <p>
-                  Use individual crates without adopting the entire ecosystem.
-                </p>
-              </article>
-
-              <article className={styles.feature}>
-                <i className="fa-solid fa-shield-halved" />
-                <h3>Reliable behavior</h3>
-                <p>Build consistent and dependable command-line experiences.</p>
-              </article>
-
-              <article className={styles.feature}>
-                <i className="fa-solid fa-box-open" />
-                <h3>Minimal dependencies</h3>
-                <p>Keep applications focused without unnecessary complexity.</p>
-              </article>
-
-              <article className={styles.feature}>
-                <i className="fa-solid fa-wand-magic-sparkles" />
-                <h3>Developer friendly</h3>
-                <p>
-                  Spend more time building your CLI and less time rebuilding its
-                  foundations.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        {/* Example */}
-        <section className={styles.section}>
-          <div className={`${styles.container} ${styles.example}`}>
-            <div className={styles.exampleContent}>
-              <span className={styles.label}>05 — Example</span>
-
-              <h2>Combine what you need.</h2>
-
-              <p>
-                Use the core CLI functionality together with terminal I/O when
-                your application needs both.
-              </p>
-            </div>
-
-            <div className={styles.codeWindow}>
-              <div className={styles.codeHeader}>
-                <span />
-                <span />
-                <span />
-
-                <small>main.rs</small>
-              </div>
-
-              <pre>
-                <code>{`use cliva::Command;
-use cliva_io::output;
-
-fn main() {
-    // CLI logic
-    // ...
-
-    output::success(
-        "Operation completed successfully."
-    );
-}`}</code>
-              </pre>
-            </div>
-          </div>
-        </section>
-
-        {/* Status */}
-        <section className={styles.section}>
-          <div className={styles.container}>
-            <div className={styles.status}>
-              <div className={styles.statusIcon}>
-                <i className="fa-solid fa-flask" />
-              </div>
-
-              <div>
-                <span className={styles.label}>06 — Status</span>
-
-                <h2>Under active development.</h2>
-
-                <p>
-                  Cliva has not reached its stable release yet. APIs may change
-                  as the project evolves, and breaking changes should be
-                  expected before the first stable version.
-                </p>
+                ))}
               </div>
             </div>
           </div>
@@ -390,18 +314,15 @@ fn main() {
         {/* Get Started */}
         <section className={`${styles.section} ${styles.final}`}>
           <div className={styles.container}>
-            <span className={styles.label}>07 — Get started</span>
+            <span className={styles.label}>{clivaData.getStarted.label}</span>
 
-            <h2>Build your next CLI with Cliva.</h2>
+            <h2>{clivaData.getStarted.title}</h2>
 
-            <p>
-              Explore the source, follow development, or start experimenting
-              with the crates.
-            </p>
+            <p>{clivaData.getStarted.description}</p>
 
             <div className={styles.actions}>
               <a
-                href="https://github.com/theNexmentProject/cliva"
+                href={clivaData.getStarted.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.button} ${styles.buttonPrimary}`}
@@ -412,7 +333,7 @@ fn main() {
               </a>
 
               <a
-                href="https://docs.rs/cliva"
+                href={clivaData.getStarted.docs}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.button} ${styles.buttonSecondary}`}
@@ -424,7 +345,7 @@ fn main() {
 
             <div className={styles.license}>
               <i className="fa-solid fa-scale-balanced" />
-              Apache License 2.0
+              {clivaData.getStarted.license}
             </div>
           </div>
         </section>

@@ -1,26 +1,44 @@
-import styles from "./page.module.css";
+import styles from "@/components/styles/blog.module.css";
+
+const blog = {
+  eyebrow: {
+    icon: "fa-solid fa-hammer",
+    text: "Building Cliva",
+  },
+
+  title: "Why we are building Cliva",
+
+  intro:
+    "Cliva started from a simple problem: most of the tools we want to build at Nexment are command-line tools, and we wanted a CLI library made for the way we build them.",
+
+  meta: [
+    {
+      icon: "fa-regular fa-clock",
+      text: "4 min read",
+    },
+  ],
+};
 
 export default function BuildingCliva() {
   return (
     <article className={styles.article}>
       <header className={styles.hero}>
         <span className={styles.eyebrow}>
-          <i className="fa-solid fa-hammer" />
-          Building Cliva
+          <i className={blog.eyebrow.icon} />
+          {blog.eyebrow.text}
         </span>
 
-        <h1>Why we are building Cliva</h1>
+        <h1 className={styles.title}>{blog.title}</h1>
 
-        <p className={styles.intro}>
-          Cliva started from a simple problem: most of the tools we want to
-          build at Nexment are command-line tools, and we wanted a CLI library
-          made for the way we build them.
-        </p>
+        <p className={styles.intro}>{blog.intro}</p>
 
         <div className={styles.meta}>
-          <span>
-            <i className="fa-regular fa-clock" />4 min read
-          </span>
+          {blog.meta.map((item) => (
+            <span className={styles.metaItem} key={item.text}>
+              <i className={item.icon} />
+              {item.text}
+            </span>
+          ))}
         </div>
       </header>
 
@@ -77,6 +95,7 @@ export default function BuildingCliva() {
               <strong>cliva</strong> helps with commands, arguments, options,
               flags, subcommands, and parsing.
             </li>
+
             <li>
               <strong>cliva-io</strong> helps with terminal input, output,
               prompts, status messages, formatting, and other terminal

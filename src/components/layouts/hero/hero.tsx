@@ -27,7 +27,8 @@ export default function Hero() {
               <h1>The Nexment Project</h1>
 
               <div className={styles.tagline}>
-                Building simple, open-source tools for developers and builders.
+                Free & open-source software, tools, and resources for
+                developers.
               </div>
             </div>
           </div>
@@ -38,8 +39,12 @@ export default function Hero() {
               <i className="fa-solid fa-arrow-right" />
             </Link>
 
-            <Link href="/projects/cliva" className={styles.secondaryButton}>
-              Explore Cliva
+            <Link
+              href="https://docs.nexment.in"
+              className={styles.secondaryButton}
+            >
+              <i className="fa-solid fa-file-lines" />
+              Docs
             </Link>
           </div>
         </section>

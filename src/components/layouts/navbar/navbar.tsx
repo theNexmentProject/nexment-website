@@ -9,6 +9,14 @@ export default function Navbar() {
           <img src="/logo.png" className={styles.logo} alt="Nexment Logo" />
         </Link>
 
+        <Link className={styles.navLink} href="/">
+          Home
+        </Link>
+
+        <Link className={styles.mobileNavLink} href="/">
+          <i className="fa-solid fa-home"></i>
+        </Link>
+
         <Link className={styles.navLink} href="https://docs.nexment.in">
           Docs
         </Link>

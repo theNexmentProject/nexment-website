@@ -1,0 +1,432 @@
+.article {
+  width: min(100%, 860px);
+  margin: 40px auto;
+  padding: 120px 24px 100px;
+  color: var(--text);
+}
+
+/* ─────────────────────────────
+   Hero
+───────────────────────────── */
+
+.hero {
+  padding-bottom: 70px;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow i {
+  font-size: 0.85rem;
+}
+
+.title {
+  max-width: 760px;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.intro {
+  max-width: 700px;
+  margin-top: 24px;
+  color: var(--primary);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metaItem i {
+  color: var(--accent);
+}
+
+/* ─────────────────────────────
+   Content
+───────────────────────────── */
+
+.content {
+  padding-top: 65px;
+}
+
+.content section {
+  margin-bottom: 64px;
+}
+
+/* Headings */
+
+.content h2 {
+  margin: 0 0 18px;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.025em;
+}
+
+.content h3 {
+  margin: 32px 0 14px;
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+}
+
+.content h4 {
+  margin: 26px 0 12px;
+  font-size: var(--text-lg);
+  line-height: var(--leading-tight);
+}
+
+/* Paragraph */
+
+.content p {
+  max-width: 720px;
+  margin: 0 0 18px;
+  color: var(--text);
+  line-height: var(--leading-relaxed);
+}
+
+.content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Small text */
+
+.small {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* Highlighted text */
+
+.highlight {
+  color: var(--accent) !important;
+  font-weight: 700;
+}
+
+/* Bold */
+
+.content strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Italic */
+
+.content em {
+  color: var(--primary);
+}
+
+/* ─────────────────────────────
+   Links
+───────────────────────────── */
+
+.content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition:
+    color var(--transition-normal),
+    text-decoration-color var(--transition-normal);
+}
+
+.content a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+
+/* ─────────────────────────────
+   Lists
+───────────────────────────── */
+
+.content ul,
+.content ol {
+  max-width: 720px;
+  margin: 24px 0;
+  padding-left: 24px;
+  color: var(--primary);
+}
+
+.content li {
+  margin-bottom: 10px;
+  padding-left: 6px;
+  line-height: var(--leading-relaxed);
+}
+
+.content li:last-child {
+  margin-bottom: 0;
+}
+
+.content ul li::marker {
+  color: var(--accent);
+}
+
+.content ol li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Nested lists */
+
+.content li ul,
+.content li ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ─────────────────────────────
+   Inline Code
+───────────────────────────── */
+
+.content code {
+  padding: 3px 7px;
+  border: 1px solid var(--border);
+  border-radius: var(--br-sm);
+  background: var(--surface);
+  color: var(--accent);
+  font-family: var(--font-code);
+  font-size: 0.9em;
+}
+
+/* ─────────────────────────────
+   Code Blocks
+───────────────────────────── */
+
+.codeBlock {
+  margin: 28px 0;
+  padding: 22px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--br-md);
+  background: var(--surface);
+}
+
+.codeBlock pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-code);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────
+   Blockquote
+───────────────────────────── */
+
+.quote {
+  margin: 30px 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: var(--primary);
+}
+
+.quote p {
+  margin: 0;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-style: normal;
+}
+
+/* ─────────────────────────────
+   Callout
+───────────────────────────── */
+
+.callout {
+  margin: 30px 0;
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--br-md);
+  background: var(--surface);
+}
+
+.calloutTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.callout p {
+  margin: 0;
+}
+
+/* ─────────────────────────────
+   Images
+───────────────────────────── */
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 32px 0;
+  border: 1px solid var(--border);
+  border-radius: var(--br-lg);
+}
+
+.imageCaption {
+  margin-top: -20px;
+  margin-bottom: 32px;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+/* ─────────────────────────────
+   Divider
+───────────────────────────── */
+
+.divider {
+  height: 1px;
+  margin: 55px 0;
+  border: 0;
+  background: var(--border);
+}
+
+/* ─────────────────────────────
+   Table
+───────────────────────────── */
+
+.tableWrapper {
+  width: 100%;
+  margin: 30px 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--br-md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 550px;
+}
+
+.table th,
+.table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  line-height: var(--leading-relaxed);
+}
+
+.table th {
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--text-sm);
+}
+
+.table td {
+  color: var(--primary);
+  font-size: var(--text-sm);
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ─────────────────────────────
+   Footer
+───────────────────────────── */
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  color: var(--primary);
+  font-size: var(--text-sm);
+}
+
+.footer i {
+  color: var(--accent);
+}
+
+/* ─────────────────────────────
+   Mobile
+───────────────────────────── */
+
+@media (max-width: 700px) {
+  .article {
+    padding: 90px 20px 70px;
+  }
+
+  .hero {
+    padding-bottom: 50px;
+  }
+
+  .title {
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+  }
+
+  .intro {
+    font-size: var(--text-md);
+  }
+
+  .content {
+    padding-top: 50px;
+  }
+
+  .content section {
+    margin-bottom: 50px;
+  }
+
+  .content h2 {
+    font-size: var(--text-xl);
+  }
+
+  .content h3 {
+    font-size: var(--text-lg);
+  }
+
+  .codeBlock {
+    margin-left: -4px;
+    margin-right: -4px;
+    padding: 18px;
+  }
+
+  .quote,
+  .callout {
+    padding: 18px;
+  }
+
+  .meta {
+    gap: 10px 16px;
+  }
+}
