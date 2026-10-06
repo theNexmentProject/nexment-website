@@ -37,7 +37,7 @@ export default function Footer() {
 
               <Link href="/about">About</Link>
               <Link href="/about#contact">Contact</Link>
-              <Link href="/support">Support</Link>
+              <Link href="/support-us">Support Us</Link>
             </div>
 
             <div className={styles.linkSection}>

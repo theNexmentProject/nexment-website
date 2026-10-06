@@ -35,8 +35,7 @@ export default function Hero() {
 
           <div className={styles.actions}>
             <Link href="/projects" className={styles.primaryButton}>
-              <i className="fa-solid fa-compass" /> Explore Projects{" "}
-              <i className="fa-solid fa-arrow-right" />
+              <i className="fa-solid fa-compass" /> Explore Projects
             </Link>
 
             <Link

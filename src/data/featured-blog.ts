@@ -13,9 +13,9 @@ const featuredBlogs: FeaturedBlog[] = [
     title: "Building Cliva",
     description:
       "Why Nexment is building a modular Rust toolkit for creating reliable and developer-friendly command-line applications.",
-    date: "2026-09-23",
-    displayDate: "September 23, 2026",
-    image: "/images/projects/cliva-banner.webp",
+    date: "2026-10-06",
+    displayDate: "October 6, 2026",
+    image: "/images/projects/cliva-banner.png",
   },
 ];
 

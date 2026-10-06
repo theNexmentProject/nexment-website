@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Utility / supporting pages
     {
-      url: `${baseUrl}/support`,
+      url: `${baseUrl}/support-us`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,

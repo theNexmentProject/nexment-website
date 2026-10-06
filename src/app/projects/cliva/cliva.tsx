@@ -117,8 +117,8 @@ const clivaData = {
           "Input",
           "Output",
           "Prompts",
-          "Formatting",
-          "Status",
+          "Progress Bars",
+          "Loaders",
           "Tables",
         ],
       },
@@ -179,7 +179,6 @@ export default function ClivaPage() {
                   className={`${styles.button} ${styles.buttonSecondary}`}
                 >
                   Explore components
-                  <i className="fa-solid fa-arrow-down" />
                 </a>
               </div>
 
