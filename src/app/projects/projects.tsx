@@ -142,28 +142,6 @@ export default function Projects() {
                             <i className="fa-solid fa-book" />
                           </Link>
                         )}
-
-                        {project.links.youtube && (
-                          <a
-                            href={project.links.youtube}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${project.name} YouTube`}
-                          >
-                            <i className="fa-brands fa-youtube" />
-                          </a>
-                        )}
-
-                        {project.links.website && (
-                          <a
-                            href={project.links.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`${project.name} website`}
-                          >
-                            <i className="fa-solid fa-arrow-up-right-from-square" />
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>

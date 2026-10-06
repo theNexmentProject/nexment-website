@@ -117,8 +117,8 @@ export default function SupportUsPage() {
             <h2>Make content</h2>
 
             <p>
-              Create videos, tutorials, posts, or articles about Nexment and
-              the projects you use. Independent content helps more developers
+              Create videos, tutorials, posts, or articles about Nexment and the
+              projects you use. Independent content helps more developers
               discover the project.
             </p>
 
@@ -135,9 +135,9 @@ export default function SupportUsPage() {
             <h2>Improve documentation</h2>
 
             <p>
-              Better documentation makes projects easier to understand and
-              use. Help us improve examples, guides, explanations, and
-              developer resources.
+              Better documentation makes projects easier to understand and use.
+              Help us improve examples, guides, explanations, and developer
+              resources.
             </p>
 
             <span className={styles.cardLink}>Improve the docs</span>
@@ -150,10 +150,10 @@ export default function SupportUsPage() {
           <h2>Your contribution is more than money.</h2>
 
           <p>
-            Nexment is not accepting monetary donations right now. Until we
-            have a proper and transparent system in place, the best way to
-            support us is by using our projects, contributing to them, sharing
-            them, reporting problems, and helping other developers.
+            Nexment is not accepting monetary donations right now. Until we have
+            a proper and transparent system in place, the best way to support us
+            is by using our projects, contributing to them, sharing them,
+            reporting problems, and helping other developers.
           </p>
         </section>
 
